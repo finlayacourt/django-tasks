@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "scheduler"
+version = "0.1.0"
+description = ""
+authors = ["Finlay A’Court <finlay@netfm.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.1"
+psycopg2-binary = "^2.9.9"
+
+
+[tool.poetry.group.dev.dependencies]
+django-stubs-ext = "^4.2.7"
+django-types = "^0.19.1"
+black = "^23.12.1"
+pyright = "^1.1.345"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# https://black.readthedocs.io/en/stable/index.html
+[tool.black]
+target-version = ["py311"]
+fast = true
+
+# https://microsoft.github.io/pyright/#/configuration
+[tool.pyright]
+exclude = [".venv", "__pycache__", "**/migrations/**"]
+venvPath = "."
+typeCheckingMode = "strict"
